@@ -2,16 +2,30 @@ package examen;
 
 import java.util.*;
 
+
+/**
+ * @author Alek Suso
+ * @version 1.0
+ * 
+ */
 public class RockPaperScissors {
 	private static int keyboard = 0;
 	private static Scanner scanner = new Scanner(System.in);
-	public static List<String> optionList;
+	/**
+	 * Atributo (lista) público que contiene los String "Rock", "Paper", "Scissors"
+	 */
+	public static List<String> optionList = Arrays.asList("Rock", "Paper", "Scissors");
 
+	/**
+	 * Constructor vacío
+	 */
 	public RockPaperScissors() {
 	}
 
+	/**
+	 * Ejecución del menú de "Piedra, papel o tijeras". Llama al método que calcula el resultado y lo muestra.
+	 */
 	public static void main(String[] args) {
-		optionList = Arrays.asList("Rock", "Paper", "Scissors");
 		do {
 			System.out.println("Welcome to Rock, Paper, Scissors!");
 			System.out.print("Enter your choice (Rock(1), Paper(2), or Scissors(3)): ");
@@ -25,6 +39,12 @@ public class RockPaperScissors {
 		scanner.close();
 	}
 
+	/**
+	 * Método que calcula el resultado de un juego de "Piedra, papel o tijeras".
+	 * @param userChoice La elección del jugador entre piedra, papel o tijeras.
+	 * @param computerChoice La elección del programa entre piedra, papel o tijeras.
+	 * @return Un String que muestra el resultado final.
+	 */
 	public static String checkGame(String userChoice, String computerChoice) {
 		String gameResult = "";
 		if (userChoice.equals(computerChoice)) {
